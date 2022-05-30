@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+
+    <mat-sidenav mode="side" opened class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+        <h4 class="name">Paco Vela</h4>
+        <p class="designation">Trabajador</p>
+    
+        <mat-divider></mat-divider>
+        
+        <button mat-button class="menu-button" routerLink="/dashboard">
+            <mat-icon>person</mat-icon>
+            <span>Principal</span>
+        </button>
+        
+        <button mat-button class="menu-button" routerLink="/partes-trabajo">
+            <mat-icon>work</mat-icon>
+            <span>Parte de trabajo</span>
+        </button>
+
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

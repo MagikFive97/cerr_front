@@ -1,0 +1,48 @@
+<br>
+  <form [formGroup]="ParteForm" (ngSubmit)="guardarCambios()">
+    <label class="cliente">
+      <input class="form-control" type="text" placeholder="Cliente" formControlName="cliente">
+    </label>
+    <label class="fecha">
+      <input class="form-control" type="text" placeholder="fecha" formControlName="fecha">
+    </label>
+    <label class="htaller">
+      <input class="form-control" type="text" placeholder="horas taller" formControlName="htaller">
+    </label>
+    <label class="hmontaje">
+      <input class="form-control" type="text" placeholder="horas montaje" formControlName="hmontaje">
+    </label>
+    <br><br>
+    <!-- <label class="adjunto">
+      <button type="button" class="btn btn-primary">Añadir adjunto</button>
+    </label> -->
+      <label class="conceptos"> 
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea1" rows="4" placeholder="Conceptos" formControlName="conceptos"></textarea>
+      </label>
+      <label class="materiales"> 
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Materiales" formControlName="materiales"></textarea>
+      </label>
+      <label class="observaciones">
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Observaciones" formControlName="observaciones"></textarea>
+      </label>
+     
+      <br><br>
+      <label class="firmas">
+        <input type="checkbox" value="firma_trabajador" name="firma_trabajador" formControlName="firma_trabajador">Trabajo completado
+        <input type="checkbox" value="firma_cliente" name="firma_cliente" class="firma" formControlName="firma_cliente">Firma Cliente
+      </label>
+      <label class="adjuntar">
+        <button type="button" class="btn btn-primary adjunto">Adjuntar</button>
+      </label>
+
+      <br><br>
+      <label class="">
+        <button type="submit" class="btn completar" (click)="nomostrar()">Completar</button>
+      </label>
+      <label class="">
+        <button type="button" class="btn completar" (click)="clear()">Borrar Todo</button>
+      </label>
+     
+     
+    
+  </form>
