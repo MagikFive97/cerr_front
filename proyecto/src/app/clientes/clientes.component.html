@@ -1,32 +1,31 @@
 
 <mat-sidenav-container>
-
+    
     <mat-sidenav mode="side" opened class="mat-elevation-z8">
 
         <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
 
-        <h4 class="name">Paco Vela</h4>
-        <p class="designation">Trabajador</p>
+        <h4 class="name">Fernando Gerundio</h4>
+        <p class="designation">Gerente</p>
     
         <mat-divider></mat-divider>
         
-        <button mat-button class="menu-button" [routerLink]="['/trabajador/dashboard']">
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/dashboard']">
             <mat-icon>person</mat-icon>
             <span>Principal</span>
         </button>
         
-        <button mat-button class="menu-button" [routerLink]="['/trabajador/partestrabajo']">
-            <mat-icon>work</mat-icon>
-            <span>Parte de trabajo</span>
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/clientes']">
+            <mat-icon>person</mat-icon>
+            <span>Clientes</span>
         </button>
 
     </mat-sidenav>
     
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
-          
-            <!-- <router-outlet></router-outlet> -->
-            <!-- <app-calendar></app-calendar> -->
+            <h2 class="title_table">Clientes</h2>
+            <app-table></app-table>
         </div>
     </mat-sidenav-content>
     

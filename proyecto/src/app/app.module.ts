@@ -25,6 +25,10 @@ import { HttpClientModule} from '@angular/common/http';
 import { ModalRellenarParteComponent } from './modal-rellenar-parte/modal-rellenar-parte.component';
 import {BotonComponent} from './boton/boton.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ModalCrearParteComponent } from './modal-crear-parte/modal-crear-parte.component';
+import { DashboardGerenciaComponent } from './dashboard-gerencia/dashboard-gerencia.component';
+import { ClientesComponent } from './clientes/clientes.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -40,7 +44,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CalendarComponent,
     TableComponent,
     ModalRellenarParteComponent,
-    BotonComponent
+    BotonComponent,
+    LoginComponent,
+    ModalCrearParteComponent,
+    DashboardGerenciaComponent,
+    ClientesComponent
     
   ],
   imports: [

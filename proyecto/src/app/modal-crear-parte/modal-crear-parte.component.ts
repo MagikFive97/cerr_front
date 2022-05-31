@@ -1,14 +1,14 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { FormGroup , FormControl} from '@angular/forms';
 import {ParteTrabajo} from '../parte';
+
 @Component({
-  selector: 'app-modal-rellenar-parte',
-  templateUrl: './modal-rellenar-parte.component.html',
-  styleUrls: ['./modal-rellenar-parte.component.scss']
+  selector: 'app-modal-crear-parte',
+  templateUrl: './modal-crear-parte.component.html',
+  styleUrls: ['./modal-crear-parte.component.scss']
 })
-export class ModalRellenarParteComponent implements OnInit {
-  
-  @Input() parteTrabajoHijo: ParteTrabajo[] = []; 
+export class ModalCrearParteComponent implements OnInit {
+  @Input() muestro: boolean | undefined;
   historico: ParteTrabajo[] = [];
   ParteForm: FormGroup;
 
@@ -48,6 +48,10 @@ export class ModalRellenarParteComponent implements OnInit {
 clear(): void {
   this.ParteForm.reset();
 
+}
+
+nomostrar(){
+  this.muestro = false;
 }
 
 }

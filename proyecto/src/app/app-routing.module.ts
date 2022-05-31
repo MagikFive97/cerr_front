@@ -2,13 +2,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent } from './dashboard/dashboard.component';
 import { PartesTrabajoComponent } from './partes-trabajo/partes-trabajo.component';
-import { ModalRellenarParteComponent } from './modal-rellenar-parte/modal-rellenar-parte.component';
+import { DashboardGerenciaComponent } from './dashboard-gerencia/dashboard-gerencia.component';
+import {ClientesComponent} from './clientes/clientes.component';
+
+import { LoginComponent } from './login/login.component';
+
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent } ,
+  { path: 'trabajador/dashboard', component: DashboardComponent } ,
 
-  { path: 'partes-trabajo', component: PartesTrabajoComponent } ,
+  { path: 'trabajador/partestrabajo', component: PartesTrabajoComponent } ,
 
-  { path: '', component: DashboardComponent } ,
+  { path: 'gerencia/dashboard', component: DashboardGerenciaComponent } ,
+
+  { path: 'gerencia/clientes', component: ClientesComponent } ,
+
+  { path: '', component: LoginComponent } ,
+
+  { path: 'login', component: LoginComponent } ,
 
 ];
 

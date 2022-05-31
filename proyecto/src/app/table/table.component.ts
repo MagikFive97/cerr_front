@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy , Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ParteTrabajo } from '../parte';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html'
 })
 export class TableComponent implements OnDestroy, OnInit {
- dtOptions: DataTables.Settings = {};
+  @Output() newItemEvent = new EventEmitter<ParteTrabajo>();
+
+  dtOptions: DataTables.Settings = {};
   dtTrigger: any = new Subject();
  
  datos:any;
+ 
  
   constructor(private http: HttpClient) { }
 
@@ -29,5 +33,10 @@ export class TableComponent implements OnDestroy, OnInit {
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
+  }
+
+
+  addNewItem(parte : ParteTrabajo) {
+    this.newItemEvent.emit(parte);
   }
 }
