@@ -12,6 +12,8 @@ export class ModalRellenarParteComponent implements OnInit {
   historico: ParteTrabajo[] = [];
   ParteForm: FormGroup;
 
+  parte : ParteTrabajo[] = [];
+
   constructor() {
     this.ParteForm  = new FormGroup({
       cliente: new FormControl(''),
@@ -27,6 +29,8 @@ export class ModalRellenarParteComponent implements OnInit {
     })}
 
   ngOnInit(): void {
+    //falta recoger bien los datos de parte de trabajo como modeloParteTrabajo
+    // this.parte.push(this.parteTrabajoHijo);
   }
   guardarCambios() {
     //push añade al final del array
@@ -43,6 +47,7 @@ export class ModalRellenarParteComponent implements OnInit {
 
     });
     console.log(this.historico);
+    console.log(this.parteTrabajoHijo);
 }
 
 clear(): void {

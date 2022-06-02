@@ -23,12 +23,18 @@ import { DataTablesModule } from "angular-datatables";
 import { TableComponent } from './table/table.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ModalRellenarParteComponent } from './modal-rellenar-parte/modal-rellenar-parte.component';
-import {BotonComponent} from './boton/boton.component'
+import {BotonComponent} from './boton/boton.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ModalCrearParteComponent } from './modal-crear-parte/modal-crear-parte.component';
 import { DashboardGerenciaComponent } from './dashboard-gerencia/dashboard-gerencia.component';
 import { ClientesComponent } from './clientes/clientes.component';
+import { FormsModule } from '@angular/forms';
+import { TableClienteComponent } from './table-cliente/table-cliente.component';
+import { BotonClienteComponent } from './boton-cliente/boton-cliente.component';
+import { ModalCrearClienteComponent } from './modal-crear-cliente/modal-crear-cliente.component';
+import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -48,7 +54,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     LoginComponent,
     ModalCrearParteComponent,
     DashboardGerenciaComponent,
-    ClientesComponent
+    ClientesComponent,
+    TableClienteComponent,
+    BotonClienteComponent,
+    ModalCrearClienteComponent,
+    ClienteSearchComponent
     
   ],
   imports: [
@@ -66,7 +76,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatFormFieldModule,
     DataTablesModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
-<br>
-  <form [formGroup]="ParteForm" (ngSubmit)="guardarCambios()" >
-    <label class="cliente">
-      <input class="form-control" type="text" placeholder="Cliente" formControlName="cliente">
-    </label>
+<div >
+
+  
+  <form [formGroup]="ParteForm" (ngSubmit)="guardarCambios()">
+    
     <label class="fecha">
       <input class="form-control" type="text" placeholder="fecha" formControlName="fecha">
     </label>
@@ -37,10 +37,11 @@
 
       <br><br>
       <label class="">
-        <button type="submit" class="btn completar" (click)="clear()">Completar</button>
+        <button type="submit" class="btn completar" >Completar</button>
       </label>
       <label class="">
         <button type="button" class="btn completar" (click)="clear()">Borrar Todo</button>
       </label>
-    
+
   </form>
+</div>

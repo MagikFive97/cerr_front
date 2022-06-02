@@ -1,22 +1,25 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, OnDestroy , Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ParteTrabajo } from '../parte';
+import { ClienteService } from '../cliente/cliente.service';
+import { Cliente } from '../cliente';
+
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html'
+  selector: 'app-table-cliente',
+  templateUrl: './table-cliente.component.html',
+  styleUrls: ['./table-cliente.component.scss']
 })
-export class TableComponent implements OnDestroy, OnInit {
-  @Output() newItemEvent = new EventEmitter<ParteTrabajo>();
+export class TableClienteComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   dtTrigger: any = new Subject();
- 
- datos:any;
- 
- 
-  constructor(private http: HttpClient) { }
+
+  clientes: Cliente[] = [];
+  datos:any;
+
+  constructor(public http: HttpClient) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -26,17 +29,9 @@ export class TableComponent implements OnDestroy, OnInit {
 
     this.http.get('http://localhost:8000/api/gerencia/clientes')
     .subscribe((res:any) =>{
-      this.datos = res.data;
+      this.clientes = res.data;
       this.dtTrigger.next();
     });
   }
 
-  ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
-  }
-
-
-  addNewItem(parte : ParteTrabajo) {
-    this.newItemEvent.emit(parte);
-  }
 }

@@ -1,0 +1,50 @@
+<br><br>
+  <form [formGroup]="ClienteForm" (ngSubmit)="guardarCambios()">
+    <label class="Nombre">
+      <input class="form-control" type="text" placeholder="Nombre" formControlName="Nombre">
+    </label>
+    <label class="Telefono">
+      <input class="form-control" type="text" placeholder="Telefono" formControlName="Telefono">
+    </label>
+    <label class="Razon_Social">
+      <input class="form-control" type="text" placeholder="Razon_Social" formControlName="Razon_Social">
+    </label>
+    <label class="Provincia">
+      <input class="form-control" type="text" placeholder="Provincia" formControlName="Provincia">
+    </label>
+    <label class="Localidad">
+      <input class="form-control" type="text" placeholder="Localidad" formControlName="Localidad">
+    </label>
+    <br><br>
+    <label class="Dni">
+      <input class="form-control" type="text" placeholder="Dni" formControlName="Dni">
+    </label>
+    <label class="Email">
+      <input class="form-control" type="text" placeholder="Email" formControlName="Email">
+    </label>
+    <label class="Direccion">
+      <input class="form-control" type="text" placeholder="Direccion" formControlName="Direccion">
+    </label>
+    <label class="Cod_postal">
+      <input class="form-control" type="text" placeholder="Cod_postal" formControlName="Cod_postal">
+    </label>
+    <label class="Beneficio">
+      <input class="form-control" type="text" placeholder="Beneficio" formControlName="Beneficio">
+    </label>
+    <br><br>
+    <!-- <label class="adjunto">
+      <button type="button" class="btn btn-primary">Añadir adjunto</button>
+    </label> -->
+      <label class="observaciones">
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Observaciones" formControlName="Observaciones"></textarea>
+      </label>
+
+      <br><br>
+      <label class="">
+        <button type="submit" class="btn completar" (click)="nomostrar()">Completar</button>
+      </label>
+      <label class="">
+        <button type="button" class="btn completar" (click)="clear()">Borrar Todo</button>
+      </label>
+     
+  </form>

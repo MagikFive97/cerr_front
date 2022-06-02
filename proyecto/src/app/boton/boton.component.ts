@@ -9,10 +9,11 @@ export class BotonComponent implements OnInit {
   mostrar:boolean | undefined;
   mostrarRelleno:boolean | undefined;
   @Input() parteTrabajoBoton: ParteTrabajo[]= [];
-  parte : ParteTrabajo[] = [];
+  // parte : ParteTrabajo[] = [];
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   mostrare(){
@@ -25,7 +26,6 @@ export class BotonComponent implements OnInit {
   
   mostrareRelleno(){
     this.mostrarRelleno = true;
-    console.log(this.parte);
   }
   noMostrareRelleno(){
     this.mostrarRelleno = false;
