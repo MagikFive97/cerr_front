@@ -13,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
-import interactionPlugin from '@fullcalendar/interaction' // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/interaction' // a plugin!
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MatTableModule } from '@angular/material/table';
@@ -36,9 +37,21 @@ import { BotonClienteComponent } from './boton-cliente/boton-cliente.component';
 import { ModalCrearClienteComponent } from './modal-crear-cliente/modal-crear-cliente.component';
 import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
 
+import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
+import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
+import {ButtonModule} from 'primeng/button';
+import {TabViewModule} from 'primeng/tabview';
+import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
+import { TableTrabajadoresComponent } from './table-trabajadores/table-trabajadores.component';
+import { BotonTrabajadorComponent } from './boton-trabajador/boton-trabajador.component';
+import { ModalCrearTrabajadorComponent } from './modal-crear-trabajador/modal-crear-trabajador.component';
+
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
-  interactionPlugin
+  interactionPlugin,
+  timeGridPlugin,
 ]);
 
 @NgModule({
@@ -58,7 +71,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TableClienteComponent,
     BotonClienteComponent,
     ModalCrearClienteComponent,
-    ClienteSearchComponent
+    ClienteSearchComponent,
+    TrabajadoresComponent,
+    TableTrabajadoresComponent,
+    BotonTrabajadorComponent,
+    ModalCrearTrabajadorComponent
     
   ],
   imports: [
@@ -78,7 +95,13 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    DialogModule,
+    InputTextModule,
+    CalendarModule,
+    CheckboxModule,
+    ButtonModule,
+    TabViewModule
     
   ],
   providers: [],

@@ -1,12 +1,14 @@
 export interface ParteTrabajo {
-    cliente: String;
-    fecha: String;
-    htaller: number;
-    hmontaje: number;
-    conceptos:string;
-    materiales:string;
-    observaciones:string;
-    firma_trabajador:boolean;
-    firma_cliente:boolean;
+    Cliente: String,
+    Fecha: String,
+    Horas_Montaje: Number,
+    Horas_Totales: Number,
+    Descripcion:string,
+    Materiales:string,
+    Observaciones:string,
+    Firma_trabajador:boolean,
+    Firma_cliente:boolean,
+    id: Number,
+    Adjuntos:string,
   }
   

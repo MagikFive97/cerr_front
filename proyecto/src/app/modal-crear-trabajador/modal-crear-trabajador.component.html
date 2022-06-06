@@ -1,0 +1,53 @@
+<br><br>
+  <form [formGroup]="EmpleadoForm" (ngSubmit)="guardarCambios()">
+    <label class="Nombre">
+      <input class="form-control" type="text" placeholder="Nombre" formControlName="Nombre">
+    </label>
+    <label class="Email">
+      <input class="form-control" type="text" placeholder="Email" formControlName="Email">
+    </label>
+    <label class="Dni">
+        <input class="form-control" type="text" placeholder="Dni" formControlName="Dni">
+      </label>
+    <label class="Seguridad_Social">
+      <input class="form-control" type="text" placeholder="Seguridad_Social" formControlName="Seguridad_Social">
+    </label>
+    <label class="Telefono">
+      <input class="form-control" type="text" placeholder="Telefono" formControlName="Telefono">
+    </label>
+    <label class="Direccion">
+      <input class="form-control" type="text" placeholder="Direccion" formControlName="Direccion">
+    </label>
+    <br><br>
+    <label class="Categoria">
+      <input class="form-control" type="text" placeholder="Categoria" formControlName="Categoria">
+    </label>
+    <label class="Cotizacion">
+      <input class="form-control" type="text" placeholder="Cotizacion" formControlName="Cotizacion">
+    </label>
+    <label class="Antiguedad">
+      <input class="form-control" type="text" placeholder="Antiguedad" formControlName="Antiguedad">
+    </label>
+    <label class="Cod_Contrato">
+      <input class="form-control" type="text" placeholder="Cod_Contrato" formControlName="Cod_Contrato">
+    </label>
+    <label class="Precio_Horas">
+      <input class="form-control" type="text" placeholder="Precio_Horas" formControlName="Precio_Horas">
+    </label>
+    <br><br>
+    <!-- <label class="adjunto">
+      <button type="button" class="btn btn-primary">Añadir adjunto</button>
+    </label> -->
+      <label class="observaciones">
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Observaciones" formControlName="Observaciones"></textarea>
+      </label>
+
+      <br><br>
+      <label class="">
+        <button type="submit" class="btn completar" (click)="nomostrar()">Completar</button>
+      </label>
+      <label class="">
+        <button type="button" class="btn completar" (click)="clear()">Borrar Todo</button>
+      </label>
+     
+  </form>

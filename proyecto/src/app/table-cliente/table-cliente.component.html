@@ -33,9 +33,9 @@
             <td>{{ e.Telefono }}</td>
             <td>{{ e.Beneficio }}</td>
             <td>
-              <i><mat-icon>delete</mat-icon></i>
-              <i><mat-icon>edit</mat-icon></i>
-              <i><mat-icon>save</mat-icon></i>
+              <mat-icon (click)="deleteClient(e.id)">delete</mat-icon>
+              <mat-icon >edit</mat-icon>
+              <mat-icon >save</mat-icon>
             </td>
           </tr>
         </tbody>

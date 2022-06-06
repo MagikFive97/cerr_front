@@ -4,7 +4,7 @@ import {DashboardComponent } from './dashboard/dashboard.component';
 import { PartesTrabajoComponent } from './partes-trabajo/partes-trabajo.component';
 import { DashboardGerenciaComponent } from './dashboard-gerencia/dashboard-gerencia.component';
 import {ClientesComponent} from './clientes/clientes.component';
-
+import {TrabajadoresComponent} from './trabajadores/trabajadores.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'gerencia/dashboard', component: DashboardGerenciaComponent } ,
 
   { path: 'gerencia/clientes', component: ClientesComponent } ,
+
+  { path: 'gerencia/trabajadores', component: TrabajadoresComponent } ,
 
   { path: '', component: LoginComponent } ,
 

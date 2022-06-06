@@ -15,7 +15,6 @@ export class TableClienteComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   dtTrigger: any = new Subject();
-
   clientes: Cliente[] = [];
   datos:any;
 
@@ -32,6 +31,16 @@ export class TableClienteComponent implements OnInit {
       this.clientes = res.data;
       this.dtTrigger.next();
     });
+    
+  }
+
+  deleteClient(id: Number){
+    this.http.delete(`http://127.0.0.1:8000/api/gerencia/clientes/${id}/delete`)
+    .subscribe((res) => res = 'Delete successful');
+  }
+
+  editClient(){
+    
   }
 
 }

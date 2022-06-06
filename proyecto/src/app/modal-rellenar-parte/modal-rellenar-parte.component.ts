@@ -16,15 +16,15 @@ export class ModalRellenarParteComponent implements OnInit {
 
   constructor() {
     this.ParteForm  = new FormGroup({
-      cliente: new FormControl(''),
-      fecha: new FormControl(''),
-      htaller: new FormControl(''),
-      hmontaje: new FormControl(''),
-      conceptos: new FormControl(''),
-      materiales: new FormControl(''),
-      observaciones: new FormControl(''),
-      firma_trabajador: new FormControl(''),
-      firma_cliente: new FormControl('')
+      Cliente: new FormControl(''),
+      Fecha: new FormControl(''),
+      Horas_Totales: new FormControl(''),
+      Horas_Montaje: new FormControl(''),
+      Descripcion: new FormControl(''),
+      Materiales: new FormControl(''),
+      Observaciones: new FormControl(''),
+      Firma_trabajador: new FormControl(''),
+      Firma_cliente: new FormControl('')
 
     })}
 
@@ -35,15 +35,17 @@ export class ModalRellenarParteComponent implements OnInit {
   guardarCambios() {
     //push añade al final del array
     this.historico.push({
-      cliente: this.ParteForm.value['cliente'],
-      fecha: this.ParteForm.value['fecha'],
-      htaller: this.ParteForm.value['htaller'],
-      hmontaje: this.ParteForm.value['hmontaje'],
-      conceptos: this.ParteForm.value['conceptos'],
-      materiales: this.ParteForm.value['materiales'],
-      observaciones: this.ParteForm.value['observaciones'],
-      firma_trabajador: this.ParteForm.value['firma_trabajador'],
-      firma_cliente: this.ParteForm.value['firma_cliente']
+      Cliente: this.ParteForm.value['Cliente'],
+      Fecha: this.ParteForm.value['Fecha'],
+      Horas_Totales: this.ParteForm.value['Horas_Totales'],
+      Horas_Montaje: this.ParteForm.value['Horas_Montaje'],
+      Descripcion: this.ParteForm.value['Descripcion'],
+      Materiales: this.ParteForm.value['materiales'],
+      Observaciones: this.ParteForm.value['observaciones'],
+      Firma_trabajador: this.ParteForm.value['firma_trabajador'],
+      Firma_cliente: this.ParteForm.value['firma_cliente'],
+      id:this.ParteForm.value['id'],
+      Adjuntos:this.ParteForm.value['adjuntos'],
 
     });
     console.log(this.historico);

@@ -3,33 +3,37 @@
   
   <form [formGroup]="ParteForm" (ngSubmit)="guardarCambios()">
     
+     
+    <label class="cliente">
+      <input class="form-control" type="text" placeholder="Cliente" formControlName="Cliente">
+    </label>
     <label class="fecha">
-      <input class="form-control" type="text" placeholder="fecha" formControlName="fecha">
+      <input class="form-control" type="text" placeholder="fecha" formControlName="Fecha">
     </label>
     <label class="htaller">
-      <input class="form-control" type="text" placeholder="horas taller" formControlName="htaller">
+      <input class="form-control" type="text" placeholder="horas taller" formControlName="Horas_Totales">
     </label>
     <label class="hmontaje">
-      <input class="form-control" type="text" placeholder="horas montaje" formControlName="hmontaje">
+      <input class="form-control" type="text" placeholder="horas montaje" formControlName="Horas_Montaje">
     </label>
     <br><br>
     <!-- <label class="adjunto">
       <button type="button" class="btn btn-primary">Añadir adjunto</button>
     </label> -->
       <label class="conceptos"> 
-        <textarea class="form-control-lg area" id="exampleFormControlTextarea1" rows="4" placeholder="Conceptos" formControlName="conceptos"></textarea>
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea1" rows="4" placeholder="Conceptos" formControlName="Descripcion"></textarea>
       </label>
       <label class="materiales"> 
-        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Materiales" formControlName="materiales"></textarea>
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Materiales" formControlName="Materiales"></textarea>
       </label>
       <label class="observaciones">
-        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Observaciones" formControlName="observaciones"></textarea>
+        <textarea class="form-control-lg area" id="exampleFormControlTextarea2" rows="4" placeholder="Observaciones" formControlName="Observaciones"></textarea>
       </label>
      
       <br><br>
       <label class="firmas">
-        <input type="checkbox" value="firma_trabajador" name="firma_trabajador" formControlName="firma_trabajador">Trabajo completado
-        <input type="checkbox" value="firma_cliente" name="firma_cliente" class="firma" formControlName="firma_cliente">Firma Cliente
+        <input type="checkbox" value="firma_trabajador" name="firma_trabajador" formControlName="Firma_trabajador">Trabajo completado
+        <input type="checkbox" value="firma_cliente" name="firma_cliente" class="firma" formControlName="Firma_cliente">Firma Cliente
       </label>
       <label class="adjuntar">
         <button type="button" class="btn btn-primary adjunto">Adjuntar</button>
