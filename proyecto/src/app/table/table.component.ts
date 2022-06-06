@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy , Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ParteTrabajo } from '../parte';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html'
 })
-export class TableComponent implements OnDestroy, OnInit {
- dtOptions: DataTables.Settings = {};
+export class TableComponent implements  OnInit {
+  @Output() newItemEvent = new EventEmitter<ParteTrabajo>();
+
+  dtOptions: DataTables.Settings = {};
   dtTrigger: any = new Subject();
+  parte: ParteTrabajo[] = [];
+  datos:any;
  
- datos:any;
  
   constructor(private http: HttpClient) { }
 
@@ -20,14 +24,21 @@ export class TableComponent implements OnDestroy, OnInit {
       pageLength: 5
     };
 
-    this.http.get('https://dummy.restapiexample.com/api/v1/employees')
+    this.http.get('http://localhost:8000/api/trabajador/partesTrabajo')
     .subscribe((res:any) =>{
-      this.datos = res.data;
+      this.parte = res.data;
       this.dtTrigger.next();
+      console.log(this.parte);
     });
+    
   }
 
-  ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+  // deleteClient(id: Number){
+  //   this.http.delete(`http://127.0.0.1:8000/api/gerencia/trabajadores/${id}/delete`)
+  //   .subscribe((res) => res = 'Delete successful');
+  // }
+
+  addNewItem(parte : ParteTrabajo) {
+    this.newItemEvent.emit(parte);
   }
 }

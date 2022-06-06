@@ -1,8 +1,16 @@
 <div>
     <button type="button" class="btn buttone" (click)="mostrare()">Crear parte de trabajo</button>
-    <div *ngIf="mostrar == true" class="tablaformulario">
+    <button type="button" class="btn buttone" (click)="mostrareRelleno()">Rellenar parte de trabajo</button>
+    <div *ngIf="mostrar" class="tablaformulario">
         <h3 class="titulo">Parte de trabajo</h3>
         <button type="button" class="btn btn-danger dentro" (click)="noMostrare()">cerrar</button>
-        <app-modal-rellenar-parte [muestro]="mostrar"></app-modal-rellenar-parte>
+        <app-modal-crear-parte></app-modal-crear-parte>
+    </div>
+
+    <div *ngIf="mostrarRelleno" class="tablaformulario">
+        <h3 class="titulo">Rellenar parte de trabajo</h3>
+        <button type="button" class="btn btn-danger dentro" (click)="noMostrareRelleno()">cerrar</button>
+        <app-modal-rellenar-parte [parteTrabajoHijo]="parteTrabajoBoton"></app-modal-rellenar-parte>
     </div>
 </div>
+

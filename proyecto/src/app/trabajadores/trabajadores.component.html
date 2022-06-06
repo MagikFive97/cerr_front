@@ -1,0 +1,52 @@
+
+<mat-sidenav-container>
+    
+    <mat-sidenav mode="side" opened class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="https://meragor.com/files/styles//ava_800_800_wm/avatar-211652-000853.png" />
+
+        <h4 class="name">Fernando Gerundio</h4>
+        <p class="designation">Gerente</p>
+    
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" [routerLink]="[]">
+            <mat-icon>home</mat-icon>
+            <span>Principal</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/dashboard']">
+            <mat-icon>calendar_month</mat-icon>
+            <span>Planificacion</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="[]">
+            <mat-icon>topic</mat-icon>
+            <span>Presupuestos</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="[]">
+            <mat-icon>receipt</mat-icon>
+            <span>Facturas</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="[]">
+            <mat-icon>description</mat-icon>
+            <span>Albaranes</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/clientes']">
+            <mat-icon>person</mat-icon>
+            <span>Clientes</span>
+        </button>
+
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/trabajadores']">
+            <mat-icon>engineering</mat-icon>
+            <span>Trabajadores</span>
+        </button>
+
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <h2 class="title_table">Trabajadores</h2>
+        <app-table-trabajadores></app-table-trabajadores>
+        <app-boton-trabajador></app-boton-trabajador>
+        </div>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>

@@ -1,0 +1,6 @@
+<button type="button" class="btn buttone" (click)="mostrare()">Crear Cliente</button>
+<div *ngIf="mostrar" class="tablaformulario">
+    <h3 class="titulo">Parte de trabajo</h3>
+    <button type="button" class="btn btn-danger dentro" (click)="noMostrare()">cerrar</button>
+    <app-modal-crear-cliente></app-modal-crear-cliente>
+</div>

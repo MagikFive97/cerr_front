@@ -1,0 +1,6 @@
+<button type="button" class="btn buttone" (click)="mostrare()">crear trabajador</button>
+<div *ngIf="mostrar" class="tablaformulario">
+    <h3 class="titulo">trabajador</h3>
+    <button type="button" class="btn btn-danger dentro" (click)="noMostrare()">cerrar</button>
+    <app-modal-crear-trabajador></app-modal-crear-trabajador>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParteTrabajo } from '../parte';
 
 @Component({
   selector: 'app-partes-trabajo',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PartesTrabajoComponent implements OnInit {
-//almacenaremos el historial de respuestas de la sesion
-  historicoImc: string[] = [];
+  partesTrabajoPadre : ParteTrabajo[] = [];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addItem(newItem: ParteTrabajo) {
+    this.partesTrabajoPadre.push(newItem);
   }
   
 }

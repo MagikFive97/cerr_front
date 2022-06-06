@@ -13,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
-import interactionPlugin from '@fullcalendar/interaction' // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/interaction' // a plugin!
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MatTableModule } from '@angular/material/table';
@@ -23,12 +24,34 @@ import { DataTablesModule } from "angular-datatables";
 import { TableComponent } from './table/table.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ModalRellenarParteComponent } from './modal-rellenar-parte/modal-rellenar-parte.component';
-import {BotonComponent} from './boton/boton.component'
+import {BotonComponent} from './boton/boton.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ModalCrearParteComponent } from './modal-crear-parte/modal-crear-parte.component';
+import { DashboardGerenciaComponent } from './dashboard-gerencia/dashboard-gerencia.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { FormsModule } from '@angular/forms';
+import { TableClienteComponent } from './table-cliente/table-cliente.component';
+import { BotonClienteComponent } from './boton-cliente/boton-cliente.component';
+import { ModalCrearClienteComponent } from './modal-crear-cliente/modal-crear-cliente.component';
+import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
+
+import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
+import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
+import {ButtonModule} from 'primeng/button';
+import {TabViewModule} from 'primeng/tabview';
+import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
+import { TableTrabajadoresComponent } from './table-trabajadores/table-trabajadores.component';
+import { BotonTrabajadorComponent } from './boton-trabajador/boton-trabajador.component';
+import { ModalCrearTrabajadorComponent } from './modal-crear-trabajador/modal-crear-trabajador.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
-  interactionPlugin
+  interactionPlugin,
+  timeGridPlugin,
 ]);
 
 @NgModule({
@@ -40,7 +63,19 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CalendarComponent,
     TableComponent,
     ModalRellenarParteComponent,
-    BotonComponent
+    BotonComponent,
+    LoginComponent,
+    ModalCrearParteComponent,
+    DashboardGerenciaComponent,
+    ClientesComponent,
+    TableClienteComponent,
+    BotonClienteComponent,
+    ModalCrearClienteComponent,
+    ClienteSearchComponent,
+    TrabajadoresComponent,
+    TableTrabajadoresComponent,
+    BotonTrabajadorComponent,
+    ModalCrearTrabajadorComponent
     
   ],
   imports: [
@@ -58,7 +93,16 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatFormFieldModule,
     DataTablesModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule,
+    DialogModule,
+    InputTextModule,
+    CalendarModule,
+    CheckboxModule,
+    ButtonModule,
+    TabViewModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
