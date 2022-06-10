@@ -7,12 +7,17 @@ import { Cliente } from '../cliente';
 })
 export class ClientesComponent implements OnInit {
   Cliente : Cliente[] = [];
+  rol: string | null | undefined ;
   constructor() { }
 
   ngOnInit(): void {
+   this.rol  = localStorage.getItem('rol');
   }
 
   addItem(newItem: Cliente) {
     this.Cliente.push(newItem);
   }
+  
+  
+
 }

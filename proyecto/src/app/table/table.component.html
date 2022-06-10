@@ -11,7 +11,6 @@
             <th>Observaciones</th>
             <th>Horas Montaje</th>
             <th>Horas Taller</th>
-            <th>Adjuntos</th>
             <th>Firma_trabajador</th>
             <th>Firma_cliente</th>
             <th>Funciones</th>
@@ -25,15 +24,13 @@
             <td>{{ e.Descripcion }}</td>
             <td>{{ e.Materiales }}</td>
             <td>{{ e.Observaciones }}</td>
-            <td>{{ e.Horas_Montaje }}</td>
-            <td>{{ e.Horas_Totales }}</td>
-            <td>{{ e.Adjuntos }}</td>
+            <td>{{ e.Horas_montaje }}</td>
+            <td>{{ e.Horas_totales }}</td>
             <td>{{ e.Firma_trabajador }}</td>
             <td>{{ e.Firma_cliente }}</td>
             <td>
-              <mat-icon>delete</mat-icon>
-              <mat-icon>edit</mat-icon>
-              <mat-icon>save</mat-icon>
+              <mat-icon (click)="deleteClient(e.id)">delete</mat-icon>
+              <mat-icon (click)="imprimir(e.id)">print</mat-icon>
             </td>
           </tr>
         </tbody>

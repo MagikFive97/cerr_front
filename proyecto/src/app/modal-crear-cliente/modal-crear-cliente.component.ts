@@ -61,9 +61,12 @@ export class ModalCrearClienteComponent implements OnInit {
       Beneficio: this.historico[0].Beneficio,
       id: this.historico[0].id,
       Dni: this.historico[0].Dni
-    }, { headers : { 'content-type': 'application/json'}}).subscribe((res : any) =>{
+    },{ headers : { 'content-type': 'application/json' ,
+    'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
+    .subscribe((res : any) =>{
       this.datos = res;
       console.log(this.datos);
+      this.clear();
     })
     // console.log(this.historico[0].Telefono);
 }

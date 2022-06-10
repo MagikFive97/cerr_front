@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trabajadores.component.scss']
 })
 export class TrabajadoresComponent implements OnInit {
-
+  rol: string | null | undefined ;
   constructor() { }
 
   ngOnInit(): void {
+    this.rol  = localStorage.getItem('rol');
   }
 
 }

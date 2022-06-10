@@ -24,7 +24,9 @@ export class TableComponent implements  OnInit {
       pageLength: 5
     };
 
-    this.http.get('http://localhost:8000/api/trabajador/partesTrabajo')
+    this.http.get('http://localhost:8000/api/trabajador/partesTrabajo',
+    { headers : { 'content-type': 'application/json' ,
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
     .subscribe((res:any) =>{
       this.parte = res.data;
       this.dtTrigger.next();
@@ -33,12 +35,25 @@ export class TableComponent implements  OnInit {
     
   }
 
-  // deleteClient(id: Number){
-  //   this.http.delete(`http://127.0.0.1:8000/api/gerencia/trabajadores/${id}/delete`)
-  //   .subscribe((res) => res = 'Delete successful');
-  // }
+  deleteClient(id: Number){
+    this.http.delete(`http://127.0.0.1:8000/api/trabajador/partesTrabajo/${id}/delete` ,
+    { headers : {
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
+    .subscribe((res) => res = 'Delete successful');
+  }
 
   addNewItem(parte : ParteTrabajo) {
     this.newItemEvent.emit(parte);
+    console.log(parte);
+  }
+
+  imprimir(id: Number){
+    this.http.get(`http://localhost:8000/api/trabajador/partesTrabajo/${id}/imprimir-pdf`,
+    { headers : { 'content-type': 'application/pdf' ,
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
+    .subscribe((res:any) =>{
+      this.datos = res.data;
+      console.log(this.datos);
+    });
   }
 }

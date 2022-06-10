@@ -9,9 +9,11 @@ import { ParteTrabajo } from '../parte';
 
 export class PartesTrabajoComponent implements OnInit {
   partesTrabajoPadre : ParteTrabajo[] = [];
+  rol: string | null | undefined ;
   constructor() { }
 
   ngOnInit(): void {
+    this.rol  = localStorage.getItem('rol');
   }
 
   addItem(newItem: ParteTrabajo) {

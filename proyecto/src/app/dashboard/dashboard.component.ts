@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  rol: string | null | undefined ;
   constructor() { }
 
   ngOnInit(): void {
+    this.rol  = localStorage.getItem('rol');
   }
 
 }
