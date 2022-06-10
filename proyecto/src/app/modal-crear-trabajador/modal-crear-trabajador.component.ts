@@ -64,9 +64,11 @@ export class ModalCrearTrabajadorComponent implements OnInit {
       Precio_Horas: this.historico[0].Precio_Horas,
       Observaciones: this.historico[0].Observaciones,
       Dni: this.historico[0].Dni
-    }, { headers : { 'content-type': 'application/json'}}).subscribe((res : any) =>{
+    }, { headers : { 'content-type': 'application/json' ,
+    'Authorization' : `Bearer ${localStorage.getItem('token')}`}}).subscribe((res : any) =>{
       this.datos = res;
       console.log(this.datos);
+      this.clear();
       // console.log(this.historico);
     })
     // console.log(this.historico[0].Telefono);

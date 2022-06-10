@@ -20,6 +20,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+
 import { DataTablesModule } from "angular-datatables";
 import { TableComponent } from './table/table.component';
 import { HttpClientModule} from '@angular/common/http';
@@ -47,6 +50,10 @@ import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { TableTrabajadoresComponent } from './table-trabajadores/table-trabajadores.component';
 import { BotonTrabajadorComponent } from './boton-trabajador/boton-trabajador.component';
 import { ModalCrearTrabajadorComponent } from './modal-crear-trabajador/modal-crear-trabajador.component';
+import { RegisterComponent } from './register/register.component';
+import { LogoutComponent } from './logout/logout.component';
+
+
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -75,7 +82,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TrabajadoresComponent,
     TableTrabajadoresComponent,
     BotonTrabajadorComponent,
-    ModalCrearTrabajadorComponent
+    ModalCrearTrabajadorComponent,
+    RegisterComponent,
+    LogoutComponent
     
   ],
   imports: [
@@ -101,7 +110,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CalendarModule,
     CheckboxModule,
     ButtonModule,
-    TabViewModule
+    TabViewModule,
+    MatCardModule,
+    MatInputModule,
     
   ],
   providers: [],

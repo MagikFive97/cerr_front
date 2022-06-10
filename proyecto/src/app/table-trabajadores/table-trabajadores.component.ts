@@ -22,7 +22,9 @@ export class TableTrabajadoresComponent implements OnInit {
       pageLength: 5
     };
 
-    this.http.get('http://localhost:8000/api/gerencia/trabajadores')
+    this.http.get('http://localhost:8000/api/gerencia/trabajadores',
+    { headers : { 'content-type': 'application/json' ,
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
     .subscribe((res:any) =>{
       this.Empleados = res.data;
       this.dtTrigger.next();
@@ -32,8 +34,11 @@ export class TableTrabajadoresComponent implements OnInit {
   }
 
   deleteClient(id: Number){
-    this.http.delete(`http://127.0.0.1:8000/api/gerencia/trabajadores/${id}/delete`)
-    .subscribe((res) => res = 'Delete successful');
+    this.http.delete(`http://127.0.0.1:8000/api/gerencia/trabajadores/${id}/delete`,
+    
+    { headers : { 'content-type': 'application/json' ,
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
+     .subscribe((res) => res = 'Delete successful');
   }
 
   editarClient(e: Empleado){

@@ -19,7 +19,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let e of clientes" >
+          <tr *ngFor="let e of clientes">
+            <ng-template *ngIf="">
+              <td><input></td>
+            </ng-template>
             <td>{{ e.id }}</td>
             <td>{{ e.Cod_postal }}</td>
             <td>{{ e.Direccion }}</td>

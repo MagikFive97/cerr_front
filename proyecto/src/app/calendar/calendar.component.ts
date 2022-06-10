@@ -17,15 +17,24 @@ export class CalendarComponent implements OnInit {
   
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+  },
+  
     dateClick: this.handleDateClick.bind(this), // bind is important!
     events: [
-      { title: 'Crear Puerta Garaje', date: '2022-06-03' },
-      { title: 'Puerta', date: '2022-06-09' },
+      { title: 'Crear Puerta Garaje', date: '2022-06-01' },
+      { title: 'Puerta Cochera Particular', date: '2022-06-07' },
+      { title: 'Ventana', date: '2022-06-07' },
+      
     ]
   };
 
   handleDateClick(arg: { dateStr: string; }) {
     alert('date click! ' + arg.dateStr);
   }
+  
   
 }

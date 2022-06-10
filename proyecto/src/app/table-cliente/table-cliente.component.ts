@@ -26,7 +26,9 @@ export class TableClienteComponent implements OnInit {
       pageLength: 5
     };
 
-    this.http.get('http://localhost:8000/api/gerencia/clientes')
+    this.http.get('http://localhost:8000/api/gerencia/clientes', 
+    { headers : { 'content-type': 'application/json' ,
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
     .subscribe((res:any) =>{
       this.clientes = res.data;
       this.dtTrigger.next();
@@ -35,7 +37,9 @@ export class TableClienteComponent implements OnInit {
   }
 
   deleteClient(id: Number){
-    this.http.delete(`http://127.0.0.1:8000/api/gerencia/clientes/${id}/delete`)
+    this.http.delete(`http://127.0.0.1:8000/api/gerencia/clientes/${id}/delete`,
+    { headers : { 'content-type': 'application/json' ,
+     'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
     .subscribe((res) => res = 'Delete successful');
   }
 

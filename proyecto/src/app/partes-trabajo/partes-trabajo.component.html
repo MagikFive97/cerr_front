@@ -10,24 +10,24 @@
     
         <mat-divider></mat-divider>
         
-        <button mat-button class="menu-button" [routerLink]="['/trabajador/dashboard']">
+        <button mat-button class="menu-button" [routerLink]="['/trabajador/dashboard']" *ngIf="rol == 'trabajador'">
             <mat-icon>person</mat-icon>
             <span>Principal</span>
         </button>
         
-        <button mat-button class="menu-button" [routerLink]="['/trabajador/partestrabajo']">
+        <button mat-button class="menu-button" [routerLink]="['/trabajador/partestrabajo']" *ngIf="rol == 'trabajador'">
             <mat-icon>work</mat-icon>
             <span>Parte de trabajo</span>
         </button>
-
+        <app-logout></app-logout>
     </mat-sidenav>
     
-    <mat-sidenav-content>
+    <mat-sidenav-content *ngIf="rol == 'trabajador'">
         <div class="content mat-elevation-z8">
             <h2 class="title_table">Partes de Trabajo</h2>
             <app-table (newItemEvent)="addItem($event)" ></app-table>
             <app-boton [parteTrabajoBoton]="partesTrabajoPadre"></app-boton>
-            <!-- <router-outlet></router-outlet> -->
+         
         </div>
     </mat-sidenav-content>
     

@@ -2,7 +2,6 @@
 
   
   <form [formGroup]="ParteForm" (ngSubmit)="guardarCambios()">
-    
      
     <label class="cliente">
       <input class="form-control" type="text" placeholder="Cliente" formControlName="Cliente">
@@ -17,9 +16,7 @@
       <input class="form-control" type="text" placeholder="horas montaje" formControlName="Horas_Montaje">
     </label>
     <br><br>
-    <!-- <label class="adjunto">
-      <button type="button" class="btn btn-primary">Añadir adjunto</button>
-    </label> -->
+
       <label class="conceptos"> 
         <textarea class="form-control-lg area" id="exampleFormControlTextarea1" rows="4" placeholder="Conceptos" formControlName="Descripcion"></textarea>
       </label>
@@ -35,9 +32,9 @@
         <input type="checkbox" value="firma_trabajador" name="firma_trabajador" formControlName="Firma_trabajador">Trabajo completado
         <input type="checkbox" value="firma_cliente" name="firma_cliente" class="firma" formControlName="Firma_cliente">Firma Cliente
       </label>
-      <label class="adjuntar">
+      <!-- <label class="adjuntar">
         <button type="button" class="btn btn-primary adjunto">Adjuntar</button>
-      </label>
+      </label> -->
 
       <br><br>
       <label class="">
