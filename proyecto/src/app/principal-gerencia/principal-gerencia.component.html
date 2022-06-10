@@ -1,6 +1,6 @@
 
 <mat-sidenav-container>
-    
+
     <mat-sidenav mode="side" opened class="mat-elevation-z8">
 
         <img class="avatar mat-elevation-z8" src="https://meragor.com/files/styles//ava_800_800_wm/avatar-211652-000853.png" />
@@ -39,13 +39,14 @@
             <span>Trabajadores</span>
         </button>
        <app-logout></app-logout>
+
     </mat-sidenav>
     
     <mat-sidenav-content *ngIf="rol == 'gerente'">
         <div class="content mat-elevation-z8">
-            <h2 class="title_table">Trabajadores</h2>
-        <app-table-trabajadores></app-table-trabajadores>
-        <app-boton-trabajador></app-boton-trabajador>
+        <h2 class="title_table">Partes de Trabajo</h2>
+         <app-table (newItemEvent)="addItem($event)"></app-table>
+         <app-boton [parteTrabajoBoton]="partesTrabajoPadre"></app-boton>
         </div>
     </mat-sidenav-content>
     

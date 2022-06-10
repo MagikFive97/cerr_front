@@ -52,6 +52,10 @@ import { BotonTrabajadorComponent } from './boton-trabajador/boton-trabajador.co
 import { ModalCrearTrabajadorComponent } from './modal-crear-trabajador/modal-crear-trabajador.component';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
+import { PrincipalGerenciaComponent } from './principal-gerencia/principal-gerencia.component';
+import { PresupuestosComponent } from './presupuestos/presupuestos.component';
+import { FacturasComponent } from './facturas/facturas.component';
+import { AlbaranesComponent } from './albaranes/albaranes.component';
 
 
 
@@ -84,7 +88,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BotonTrabajadorComponent,
     ModalCrearTrabajadorComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    PrincipalGerenciaComponent,
+    PresupuestosComponent,
+    FacturasComponent,
+    AlbaranesComponent
     
   ],
   imports: [

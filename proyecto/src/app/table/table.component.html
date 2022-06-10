@@ -30,7 +30,7 @@
             <td>{{ e.Firma_cliente }}</td>
             <td>
               <mat-icon (click)="deleteClient(e.id)">delete</mat-icon>
-              <mat-icon (click)="imprimir(e.id)">print</mat-icon>
+             <a href="http://localhost:8000/api/{{e.id}}/imprimir-pdf"><mat-icon >print</mat-icon></a> 
             </td>
           </tr>
         </tbody>

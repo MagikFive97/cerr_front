@@ -9,7 +9,7 @@
         <p class="designation">Gerente</p>
     
         <mat-divider></mat-divider>
-        <button mat-button class="menu-button" [routerLink]="[]" *ngIf="rol == 'gerente'">
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/principal']" *ngIf="rol == 'gerente'">
             <mat-icon>home</mat-icon>
             <span>Principal</span>
         </button>
@@ -17,7 +17,7 @@
             <mat-icon>calendar_month</mat-icon>
             <span>Planificacion</span>
         </button>
-        <button mat-button class="menu-button" [routerLink]="[]" *ngIf="rol == 'gerente'">
+        <button mat-button class="menu-button" [routerLink]="['/gerencia/presupuestos']" *ngIf="rol == 'gerente'">
             <mat-icon>topic</mat-icon>
             <span>Presupuestos</span>
         </button>
