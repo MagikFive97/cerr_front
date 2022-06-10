@@ -6,6 +6,10 @@ import { DashboardGerenciaComponent } from './dashboard-gerencia/dashboard-geren
 import {ClientesComponent} from './clientes/clientes.component';
 import {TrabajadoresComponent} from './trabajadores/trabajadores.component';
 import { LoginComponent } from './login/login.component';
+import {PrincipalGerenciaComponent} from './principal-gerencia/principal-gerencia.component';
+import { PresupuestosComponent } from './presupuestos/presupuestos.component';
+import { FacturasComponent } from './facturas/facturas.component';
+import { AlbaranesComponent } from './albaranes/albaranes.component';
 
 const routes: Routes = [
   { path: 'trabajador/dashboard', component: DashboardComponent } ,
@@ -23,6 +27,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent } ,
 
   { path: 'register', component: LoginComponent } ,
+
+  { path: 'gerencia/principal', component: PrincipalGerenciaComponent  } ,
+
+  { path: 'gerencia/presupuestos', component: PresupuestosComponent  } ,
+
+  { path: 'gerencia/facturas', component: FacturasComponent  } ,
+
+  { path: 'gerencia/albaranes', component: AlbaranesComponent  } ,
 
 ];
 

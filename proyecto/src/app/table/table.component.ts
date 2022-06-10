@@ -37,7 +37,7 @@ export class TableComponent implements  OnInit {
 
   deleteClient(id: Number){
     this.http.delete(`http://127.0.0.1:8000/api/trabajador/partesTrabajo/${id}/delete` ,
-    { headers : {
+    { headers : {'content-type': 'application/json' ,
      'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
     .subscribe((res) => res = 'Delete successful');
   }
@@ -48,8 +48,8 @@ export class TableComponent implements  OnInit {
   }
 
   imprimir(id: Number){
-    this.http.get(`http://localhost:8000/api/trabajador/partesTrabajo/${id}/imprimir-pdf`,
-    { headers : { 'content-type': 'application/pdf' ,
+    this.http.get(`http://localhost:8000/api/${id}/imprimir-pdf`,
+    { headers : { 'Content-Type': 'application/pdf' ,
      'Authorization' : `Bearer ${localStorage.getItem('token')}`}})
     .subscribe((res:any) =>{
       this.datos = res.data;
